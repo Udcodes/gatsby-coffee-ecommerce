@@ -4,13 +4,13 @@
 // for (var k in envConfig) {
 //   process.env[k] = envConfig[k]
 // }
-// let env = process.env.NODE_ENV || "development"
-// require("dotenv").config({ path: `./.env.${env}` })
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-const dotenv = require("dotenv").config({ silent: true })
-if (process.env.NODE_ENV !== "test" && dotenv.error) throw dotenv.error
+let env = process.env.NODE_ENV || "development"
+require("dotenv").config({ path: `./.env.${env}` })
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
+// const dotenv = require("dotenv").config({ silent: true })
+// if (process.env.NODE_ENV !== "test" && dotenv.error) throw dotenv.error
 
 module.exports = {
   siteMetadata: {
