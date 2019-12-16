@@ -1,3 +1,9 @@
+const fs = require("fs")
+const dotenv = require("dotenv")
+const envConfig = dotenv.parse(fs.readFileSync(`.env.development`))
+for (var k in envConfig) {
+  process.env[k] = envConfig[k]
+}
 let env = process.env.NODE_ENV || "development"
 require("dotenv").config({ path: `./.env.${env}` })
 // require("dotenv").config({
