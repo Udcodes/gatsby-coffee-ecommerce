@@ -1,11 +1,13 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+let env = process.env.NODE_ENV || "development"
+require("dotenv").config({ path: `./.env.${env}` })
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
 module.exports = {
   siteMetadata: {
     title: `Happy Coffee`,
     description: `Freshly brewed Nigerian grown coffee`,
-    author: `@gatsbyjs`,
+    author: `@Udcodes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,7 +24,6 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-        // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },

@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "bufferutil": "^4.0.1",
+    "dotenv": "^8.2.0",
     "env-cmd": "^10.0.1",
     "gatsby": "^2.18.11",
     "gatsby-background-image": "^0.9.12",
