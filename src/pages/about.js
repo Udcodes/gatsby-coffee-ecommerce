@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Background from "../components/Globals/Background"
 import Info from "../components/Home/info"
 
-const AboutPage = ({ data }) => (
+const About = ({ data }) => (
   <Layout>
     <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
     <Background
@@ -28,4 +28,4 @@ export const query = graphql`
     }
   }
 `
-export default AboutPage
+export default About
