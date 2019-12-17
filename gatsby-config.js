@@ -1,16 +1,10 @@
-// const fs = require("fs")
-
-// const envConfig = dotenv.parse(fs.readFileSync(`.env.development`))
-// for (var k in envConfig) {
-//   process.env[k] = envConfig[k]
+// const dotenv = require("dotenv")
+// if (process.env.NODE_ENV !== "production") {
+//   dotenv.config()
 // }
-let env = process.env.NODE_ENV || "development"
-require("dotenv").config({ path: `./.env.${env}` })
-// require("dotenv").config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// })
-// const dotenv = require("dotenv").config({ silent: true })
-// if (process.env.NODE_ENV !== "test" && dotenv.error) throw dotenv.error
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -19,6 +13,13 @@ module.exports = {
     author: `@Udcodes`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `mq17ozxfek7a`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -29,13 +30,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

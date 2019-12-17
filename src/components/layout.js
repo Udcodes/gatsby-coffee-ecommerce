@@ -8,11 +8,11 @@ import Navbar from "./Globals/Navbar"
 import Footer from "./Globals/footer"
 
 const Layout = ({ children }) => (
-  <Layout>
+  <>
     <Navbar />
     {children}
     <Footer />
-  </Layout>
+  </>
 )
 
 Layout.propTypes = {
