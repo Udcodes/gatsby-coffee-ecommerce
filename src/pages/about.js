@@ -7,7 +7,7 @@ import Info from "../components/Home/info"
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="About" keywords={[`gatsby`, `application`, `react`]} />
     <Background
       img={data.img.childImageSharp.fluid}
       title="About Us"
