@@ -2,6 +2,9 @@
 // if (process.env.NODE_ENV !== "production") {
 //   dotenv.config()
 // }
+// Requiring function causes error during builds
+// as the code tries to reference window
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
